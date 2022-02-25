@@ -8,6 +8,7 @@ import com.fy4cloud.exception.BaseException;
 import com.fy4cloud.exception.BusinessException;
 import com.fy4cloud.exception.il8n.UnifiedMessageSource;
 import com.fy4cloud.util.R;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.ConversionNotSupportedException;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 @ControllerAdvice
 @ConditionalOnWebApplication
 @ConditionalOnMissingBean({GlobalExceptionHandler.class})
+@Slf4j
 public class GlobalExceptionHandler {
 
 	@Autowired
@@ -92,13 +94,13 @@ public class GlobalExceptionHandler {
 	})
 	@ResponseBody
 	public R<CommonResponseEnum> handleServletException(Exception e) {
-		//log.error(e.getMessage(), e);
+		log.error(e.getMessage(), e);
 		int code = CommonResponseEnum.SERVER_ERROR.getCode();
 		try {
 			ServletResponseEnum servletExceptionEnum = ServletResponseEnum.valueOf(e.getClass().getSimpleName());
 			code = servletExceptionEnum.getCode();
 		} catch (IllegalArgumentException e1) {
-			//log.error("class [{}] not defined in enum {}", e.getClass().getName(), ServletResponseEnum.class.getName());
+			log.error("class [{}] not defined in enum {}", e.getClass().getName(), ServletResponseEnum.class.getName());
 		}
 
 		if (CommonConstants.ENV_PROD.equals(profile)) {
@@ -138,7 +140,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value = BindException.class)
 	@ResponseBody
 	public R<CommonResponseEnum> handleBindException(BindException e) {
-		//log.error("参数绑定异常", e);
+		log.error("参数绑定异常", e);
 		return wrapperBindingResult(e.getBindingResult());
 	}
 
@@ -150,7 +152,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value = MethodArgumentNotValidException.class)
 	@ResponseBody
 	public R<CommonResponseEnum> handleValidException(MethodArgumentNotValidException e) {
-		//log.error("参数校验异常", e);
+		log.error("参数校验异常", e);
 		return wrapperBindingResult(e.getBindingResult());
 	}
 
@@ -162,7 +164,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value = BaseException.class)
 	@ResponseBody
 	public R<CommonResponseEnum> handleBaseException(BaseException e) {
-		//log.error(e.getMessage(), e);
+		log.error(e.getMessage(), e);
 		return R.exception(e.getResponseCodeEnum().getCode(), getUnifiedMessage(e));
 	}
 
@@ -186,7 +188,7 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value = Exception.class)
 	@ResponseBody
 	public R<CommonResponseEnum> handleException(Exception e) {
-		// log.error(e.getMessage(), e);
+		 log.error(e.getMessage(), e);
 
 		if (CommonConstants.ENV_PROD.equals(profile)) {
 			// 当为生产环境, 不适合把具体的异常信息展示给用户, 比如数据库异常信息.在这里做国际化处理
