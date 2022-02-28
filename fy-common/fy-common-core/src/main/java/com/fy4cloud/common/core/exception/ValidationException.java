@@ -1,6 +1,6 @@
-package com.fy4cloud.exception;
+package com.fy4cloud.common.core.exception;
 
-import com.fy4cloud.constant.enums.IResponseCodeEnum;
+import com.fy4cloud.common.core.constant.enums.IResponseCodeEnum;
 
 /**
  * 校验异常

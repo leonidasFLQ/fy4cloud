@@ -1,6 +1,6 @@
-package com.fy4cloud.util;
+package com.fy4cloud.common.core.util;
 
-import com.fy4cloud.constant.CommonConstants;
+import com.fy4cloud.common.core.constant.CommonConstants;
 import lombok.*;
 import lombok.experimental.Accessors;
 import java.io.Serializable;

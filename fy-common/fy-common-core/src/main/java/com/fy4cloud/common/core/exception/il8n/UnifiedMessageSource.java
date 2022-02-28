@@ -1,4 +1,4 @@
-package com.fy4cloud.exception.il8n;
+package com.fy4cloud.common.core.exception.il8n;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;

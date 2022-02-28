@@ -1,4 +1,4 @@
-package com.fy4cloud.constant;
+package com.fy4cloud.common.core.constant;
 
 /**
  * 通用常量类

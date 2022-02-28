@@ -1,8 +1,8 @@
-package com.fy4cloud.exception.assertion;
+package com.fy4cloud.common.core.exception.assertion;
 
 import cn.hutool.core.util.ArrayUtil;
-import com.fy4cloud.exception.BaseException;
-import com.fy4cloud.exception.WrapMessageException;
+import com.fy4cloud.common.core.exception.BaseException;
+import com.fy4cloud.common.core.exception.WrapMessageException;
 
 import java.text.MessageFormat;
 import java.util.Collection;

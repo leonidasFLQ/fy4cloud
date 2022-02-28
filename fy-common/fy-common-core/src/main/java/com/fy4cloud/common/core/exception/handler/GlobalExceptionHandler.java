@@ -1,13 +1,13 @@
-package com.fy4cloud.exception.handler;
+package com.fy4cloud.common.core.exception.handler;
 
-import com.fy4cloud.constant.CommonConstants;
-import com.fy4cloud.constant.enums.ArgumentResponseEnum;
-import com.fy4cloud.constant.enums.CommonResponseEnum;
-import com.fy4cloud.constant.enums.ServletResponseEnum;
-import com.fy4cloud.exception.BaseException;
-import com.fy4cloud.exception.BusinessException;
-import com.fy4cloud.exception.il8n.UnifiedMessageSource;
-import com.fy4cloud.util.R;
+import com.fy4cloud.common.core.constant.CommonConstants;
+import com.fy4cloud.common.core.constant.enums.ArgumentResponseEnum;
+import com.fy4cloud.common.core.constant.enums.ServletResponseEnum;
+import com.fy4cloud.common.core.exception.BaseException;
+import com.fy4cloud.common.core.exception.BusinessException;
+import com.fy4cloud.common.core.exception.il8n.UnifiedMessageSource;
+import com.fy4cloud.common.core.util.R;
+import com.fy4cloud.common.core.constant.enums.CommonResponseEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.ConversionNotSupportedException;
 import org.springframework.beans.TypeMismatchException;

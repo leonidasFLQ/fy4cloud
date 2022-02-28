@@ -1,6 +1,6 @@
-package com.fy4cloud.constant.enums;
+package com.fy4cloud.common.core.constant.enums;
 
-import com.fy4cloud.exception.assertion.CommonExceptionAssert;
+import com.fy4cloud.common.core.exception.assertion.CommonExceptionAssert;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

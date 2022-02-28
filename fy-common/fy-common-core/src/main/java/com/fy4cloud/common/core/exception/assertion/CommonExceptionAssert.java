@@ -1,19 +1,19 @@
-package com.fy4cloud.exception.assertion;
+package com.fy4cloud.common.core.exception.assertion;
 
 import cn.hutool.core.util.ArrayUtil;
-import com.fy4cloud.constant.enums.IResponseCodeEnum;
-import com.fy4cloud.exception.BaseException;
-import com.fy4cloud.exception.BusinessException;
+import com.fy4cloud.common.core.constant.enums.IResponseCodeEnum;
+import com.fy4cloud.common.core.exception.ArgumentException;
+import com.fy4cloud.common.core.exception.BaseException;
 
 import java.text.MessageFormat;
 
 /**
- * 业务异常断言接口
+ * 通用异常断言接口
  * @author fy
  * @date 2022/2/25
  **/
 
-public interface BusinessExceptionAssert extends IResponseCodeEnum, Assert{
+public interface CommonExceptionAssert extends IResponseCodeEnum, Assert{
 
 	@Override
 	default BaseException newException(Object... args) {
@@ -22,7 +22,7 @@ public interface BusinessExceptionAssert extends IResponseCodeEnum, Assert{
 			msg = MessageFormat.format(this.getMsg(), args);
 		}
 
-		return new BusinessException(this, args, msg);
+		return new ArgumentException(this, args, msg);
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public interface BusinessExceptionAssert extends IResponseCodeEnum, Assert{
 			msg = MessageFormat.format(this.getMsg(), args);
 		}
 
-		return new BusinessException(this, args, msg, t);
+		return new ArgumentException(this, args, msg, t);
 	}
 
 }

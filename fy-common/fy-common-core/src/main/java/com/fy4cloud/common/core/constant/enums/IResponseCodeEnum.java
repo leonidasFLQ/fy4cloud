@@ -1,4 +1,4 @@
-package com.fy4cloud.constant.enums;
+package com.fy4cloud.common.core.constant.enums;
 
 /**
  * 异常返回码枚举接口
