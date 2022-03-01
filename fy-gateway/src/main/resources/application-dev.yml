@@ -1,0 +1,20 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+        # 微服务的bootstrap.yml中配值组
+        # group: FYSYSTEM-GROUP
+        # namespace: 0bf2c7ef-fa9d-4068-8107-138f07e10e2f
+  profiles:
+    active: @profiles.active@

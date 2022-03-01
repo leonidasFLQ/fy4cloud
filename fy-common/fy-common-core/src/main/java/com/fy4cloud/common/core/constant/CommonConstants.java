@@ -23,4 +23,12 @@ public interface CommonConstants {
 	 * 失败标记
 	 */
 	Integer FAIL = 1;
+	/**
+	 * 编码
+	 */
+	String UTF8 = "UTF-8";
+	/**
+	 * JSON 资源
+	 */
+	String CONTENT_TYPE = "application/json; charset=utf-8";
 }

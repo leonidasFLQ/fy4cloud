@@ -57,11 +57,11 @@
 <!--				<artifactId>fy-common-mybatis</artifactId>-->
 <!--				<version>${fy.common.version}</version>-->
 <!--			</dependency>-->
-<!--			<dependency>-->
-<!--				<groupId>com.fy4cloud</groupId>-->
-<!--				<artifactId>fy-common-security</artifactId>-->
-<!--				<version>${fy.common.version}</version>-->
-<!--			</dependency>-->
+			<dependency>
+				<groupId>com.fy4cloud</groupId>
+				<artifactId>fy-common-security</artifactId>
+				<version>${fy.common.version}</version>
+			</dependency>
 <!--			<dependency>-->
 <!--				<groupId>com.fy4cloud</groupId>-->
 <!--				<artifactId>fy-common-feign</artifactId>-->
